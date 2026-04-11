@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Taker AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #1a2744;
+            --navy-mid: #243459;
+            --navy-light: #2e4070;
+            --copper: #b87333;
+            --copper-light: #d4914d;
+            --cream: #f5f0e8;
+            --cream-dark: #ece5d8;
+            --text: #1a2744;
+            --text-muted: #5a6a8a;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: var(--navy);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(184,115,51,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(46,64,112,0.8) 0%, transparent 50%);
+        }
+
+        .header-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 64px 32px 56px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--copper), var(--copper-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .brand-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            color: var(--white);
+            letter-spacing: 0.02em;
+        }
+
+        .brand-by {
+            font-size: 12px;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(36px, 6vw, 56px);
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        header h1 em {
+            font-style: italic;
+            color: var(--copper-light);
+        }
+
+        .header-meta {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.04em;
+        }
+
+        /* Main content */
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 64px 32px 96px;
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-left: 4px solid var(--copper);
+            border-radius: 0 12px 12px 0;
+            padding: 28px 32px;
+            margin-bottom: 56px;
+        }
+
+        .toc-title {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+        }
+
+        @media (max-width: 560px) {
+            .toc ol { grid-template-columns: 1fr; }
+        }
+
+        .toc li {
+            counter-increment: toc;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .toc li::before {
+            content: counter(toc, decimal-leading-zero);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--copper);
+            flex-shrink: 0;
+        }
+
+        .toc a {
+            font-size: 14px;
+            color: var(--navy-mid);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover { color: var(--copper); }
+
+        /* Sections */
+        .policy-section {
+            margin-bottom: 52px;
+            padding-bottom: 52px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section-number {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 8px;
+        }
+
+        .policy-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 26px;
+            color: var(--navy);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .policy-section p {
+            font-size: 15px;
+            color: #3a4a6a;
+            margin-bottom: 16px;
+            line-height: 1.75;
+        }
+
+        .policy-section p:last-child { margin-bottom: 0; }
+
+        /* Sub-sections */
+        .subsection {
+            margin: 24px 0;
+        }
+
+        .subsection h3 {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        /* Third party list */
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--white);
+            border: 1px solid var(--cream-dark);
+            border-radius: 10px;
+            padding: 14px 18px;
+        }
+
+        .service-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--copper);
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .service-name {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--navy);
+        }
+
+        .service-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .service-link {
+            font-size: 12px;
+            color: var(--copper);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .service-link:hover { text-decoration: underline; }
+
+        /* Rights list */
+        .rights-list {
+            list-style: none;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rights-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #3a4a6a;
+        }
+
+        .rights-list li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: rgba(184,115,51,0.12);
+            color: var(--copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Contact card */
+        .contact-card {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(184,115,51,0.2) 0%, transparent 70%);
+        }
+
+        .contact-card p {
+            color: rgba(255,255,255,0.7) !important;
+            font-size: 14px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .contact-email {
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            color: var(--copper-light);
+            text-decoration: none;
+            display: block;
+        }
+
+        .contact-email:hover { color: var(--white); }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-inner > * {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .header-inner > *:nth-child(1) { animation-delay: 0.1s; }
+        .header-inner > *:nth-child(2) { animation-delay: 0.2s; }
+        .header-inner > *:nth-child(3) { animation-delay: 0.3s; }
+
+        @media (max-width: 600px) {
+            .header-inner { padding: 48px 20px 40px; }
+            main { padding: 48px 20px 72px; }
+            .toc { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="brand">
+            <div class="brand-icon">🎙</div>
+            <div>
+                <div class="brand-name">Taker AI</div>
+                <div class="brand-by">by Kindred Spruce</div>
+            </div>
+        </div>
+        <h1>Privacy <em>Policy</em></h1>
+        <p class="header-meta">Last updated: April 10, 2026</p>
+    </div>
+</header>
+
+<main>
+
+    <nav class="toc">
+        <div class="toc-title">Table of Contents</div>
+        <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#information">Information We Collect</a></li>
+            <li><a href="#third-party">Third-Party Services</a></li>
+            <li><a href="#use">How We Use Your Information</a></li>
+            <li><a href="#retention">Data Retention</a></li>
+            <li><a href="#security">Data Security</a></li>
+            <li><a href="#children">Children's Privacy</a></li>
+            <li><a href="#recording">Recording Consent</a></li>
+            <li><a href="#rights">Your Rights</a></li>
+            <li><a href="#changes">Changes to This Policy</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ol>
+    </nav>
+
+    <section class="policy-section" id="overview">
+        <div class="section-number">01</div>
+        <h2>Overview</h2>
+        <p>Taker AI ("the App") is developed and operated by Kindred Spruce ("we", "us", or "our"). This Privacy Policy explains how we collect, use, and protect your information when you use Taker AI on iOS devices.</p>
+        <p>By using Taker AI, you agree to the collection and use of information in accordance with this policy.</p>
+    </section>
+
+    <section class="policy-section" id="information">
+        <div class="section-number">02</div>
+        <h2>Information We Collect</h2>
+
+        <div class="subsection">
+            <h3>Account Information</h3>
+            <p>When you sign in with Google, we receive your name and email address. These are stored securely in Firebase Authentication and used solely to identify your account.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Audio Recordings</h3>
+            <p>When you record a session, your audio is temporarily transmitted to OpenAI's Whisper API for transcription. Audio files are processed in transit and are not permanently stored by Taker AI or retained by our third-party processors after transcription is complete.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Notes and Tasks</h3>
+            <p>Your transcriptions, AI-generated summaries, and voice tasks are stored securely in Google Firebase Firestore, associated with your personal account. This data is only accessible to you.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Usage Data</h3>
+            <p>We do not collect analytics, behavioral tracking, or advertising data of any kind.</p>
+        </div>
+    </section>
+
+    <section class="policy-section" id="third-party">
+        <div class="section-number">03</div>
+        <h2>Third-Party Services</h2>
+        <p>Taker AI relies on the following third-party services to operate. Each has its own privacy policy governing their handling of data.</p>
+
+        <ul class="service-list">
+            <li class="service-item">
+                <div class="service-dot"></div>
+                <div>
+                    <div class="service-name">Google Firebase</div>
+                    <div class="service-desc">Authentication and secure database storage</div>
+                    <a href="https://firebase.google.com/support/privacy" class="service-link" target="_blank">firebase.google.com/support/privacy →</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <div class="service-dot"></div>
+                <div>
+                    <div class="service-name">OpenAI (Whisper)</div>
+                    <div class="service-desc">Audio transcription processing</div>
+                    <a href="https://openai.com/privacy" class="service-link" target="_blank">openai.com/privacy →</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <div class="service-dot"></div>
+                <div>
+                    <div class="service-name">Anthropic (Claude)</div>
+                    <div class="service-desc">AI summarization and task extraction</div>
+                    <a href="https://anthropic.com/privacy" class="service-link" target="_blank">anthropic.com/privacy →</a>
+                </div>
+            </li>
+            <li class="service-item">
+                <div class="service-dot"></div>
+                <div>
+                    <div class="service-name">Google Sign-In</div>
+                    <div class="service-desc">Secure account authentication</div>
+                    <a href="https://policies.google.com/privacy" class="service-link" target="_blank">policies.google.com/privacy →</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="policy-section" id="use">
+        <div class="section-number">04</div>
+        <h2>How We Use Your Information</h2>
+        <p>We use your information solely to provide the core functionality of Taker AI:</p>
+        <ul class="rights-list">
+            <li>Authenticate your identity and secure your account</li>
+            <li>Transcribe your audio recordings via OpenAI Whisper</li>
+            <li>Generate summaries and extract tasks via Anthropic Claude</li>
+            <li>Store your notes and tasks for your personal use</li>
+        </ul>
+        <p style="margin-top: 20px;">We do not sell, rent, or share your personal information with any third parties for marketing or advertising purposes.</p>
+    </section>
+
+    <section class="policy-section" id="retention">
+        <div class="section-number">05</div>
+        <h2>Data Retention</h2>
+        <p>Your notes and tasks remain stored in your account until you delete them manually or delete your account entirely. You can delete your account at any time from the Settings screen within the app, which will permanently and irreversibly remove all your data from our systems.</p>
+    </section>
+
+    <section class="policy-section" id="security">
+        <div class="section-number">06</div>
+        <h2>Data Security</h2>
+        <p>Your data is stored using Google Firebase, which employs industry-standard encryption and security measures. Access to your data is restricted to your authenticated account only — no other user can access your notes or tasks.</p>
+        <p>While we take reasonable measures to protect your data, no method of transmission over the internet is 100% secure. We encourage you to use a strong password for your Google account.</p>
+    </section>
+
+    <section class="policy-section" id="children">
+        <div class="section-number">07</div>
+        <h2>Children's Privacy</h2>
+        <p>Taker AI is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+    </section>
+
+    <section class="policy-section" id="recording">
+        <div class="section-number">08</div>
+        <h2>Recording Consent</h2>
+        <p>You are solely responsible for obtaining consent from all parties being recorded in accordance with applicable laws in your jurisdiction. Recording consent laws vary significantly by location — some require only one-party consent while others require all-party consent.</p>
+        <p>Kindred Spruce and Taker AI are not liable for any legal consequences arising from your failure to obtain proper recording consent.</p>
+    </section>
+
+    <section class="policy-section" id="rights">
+        <div class="section-number">09</div>
+        <h2>Your Rights</h2>
+        <p>You have the following rights regarding your personal data:</p>
+        <ul class="rights-list">
+            <li>Access your personal data stored in the app</li>
+            <li>Delete your account and all associated data at any time</li>
+            <li>Request information about how your data is processed</li>
+            <li>Withdraw consent by discontinuing use of the app</li>
+        </ul>
+        <p style="margin-top: 20px;">To delete your account and all associated data, use the <strong>Delete Account</strong> option in Settings within the app.</p>
+    </section>
+
+    <section class="policy-section" id="changes">
+        <div class="section-number">10</div>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We will notify you of any significant changes by updating the date at the top of this policy. Continued use of Taker AI after any changes constitutes your acceptance of the updated policy.</p>
+    </section>
+
+    <section class="policy-section" id="contact">
+        <div class="section-number">11</div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out to us directly.</p>
+        <div class="contact-card">
+            <p>Kindred Spruce — Taker AI Privacy</p>
+            <a href="mailto:hello@kindredspruce.com" class="contact-email">hello@kindredspruce.com</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">Kindred Spruce</div>
+        <div class="footer-copy">© 2026 Kindred Spruce. All rights reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>
